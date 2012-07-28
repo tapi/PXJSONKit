@@ -1,0 +1,242 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2B11001715C44C8600142119 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B11001615C44C8500142119 /* Foundation.framework */; };
+		2B11001C15C44C8600142119 /* PXJSONKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B11001B15C44C8600142119 /* PXJSONKit.h */; };
+		2B11001E15C44C8600142119 /* PXJSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B11001D15C44C8600142119 /* PXJSONKit.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2B11001115C44C8500142119 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				2B11001C15C44C8600142119 /* PXJSONKit.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2B11001315C44C8500142119 /* libPXJSONKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPXJSONKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B11001615C44C8500142119 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2B11001A15C44C8600142119 /* PXJSONKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PXJSONKit-Prefix.pch"; sourceTree = "<group>"; };
+		2B11001B15C44C8600142119 /* PXJSONKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PXJSONKit.h; sourceTree = "<group>"; };
+		2B11001D15C44C8600142119 /* PXJSONKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PXJSONKit.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2B11001015C44C8500142119 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B11001715C44C8600142119 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2B11000815C44C8500142119 = {
+			isa = PBXGroup;
+			children = (
+				2B11001815C44C8600142119 /* PXJSONKit */,
+				2B11001515C44C8500142119 /* Frameworks */,
+				2B11001415C44C8500142119 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2B11001415C44C8500142119 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2B11001315C44C8500142119 /* libPXJSONKit.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2B11001515C44C8500142119 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2B11001615C44C8500142119 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2B11001815C44C8600142119 /* PXJSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				2B11001B15C44C8600142119 /* PXJSONKit.h */,
+				2B11001D15C44C8600142119 /* PXJSONKit.m */,
+				2B11001915C44C8600142119 /* Supporting Files */,
+			);
+			path = PXJSONKit;
+			sourceTree = "<group>";
+		};
+		2B11001915C44C8600142119 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2B11001A15C44C8600142119 /* PXJSONKit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2B11001215C44C8500142119 /* PXJSONKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B11002115C44C8600142119 /* Build configuration list for PBXNativeTarget "PXJSONKit" */;
+			buildPhases = (
+				2B11000F15C44C8500142119 /* Sources */,
+				2B11001015C44C8500142119 /* Frameworks */,
+				2B11001115C44C8500142119 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PXJSONKit;
+			productName = PXJSONKit;
+			productReference = 2B11001315C44C8500142119 /* libPXJSONKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2B11000A15C44C8500142119 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Paddy O'Brien";
+			};
+			buildConfigurationList = 2B11000D15C44C8500142119 /* Build configuration list for PBXProject "PXJSONKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2B11000815C44C8500142119;
+			productRefGroup = 2B11001415C44C8500142119 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2B11001215C44C8500142119 /* PXJSONKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2B11000F15C44C8500142119 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B11001E15C44C8600142119 /* PXJSONKit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2B11001F15C44C8600142119 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2B11002015C44C8600142119 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2B11002215C44C8600142119 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/PXJSONKit.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PXJSONKit/PXJSONKit-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2B11002315C44C8600142119 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/PXJSONKit.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PXJSONKit/PXJSONKit-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2B11000D15C44C8500142119 /* Build configuration list for PBXProject "PXJSONKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B11001F15C44C8600142119 /* Debug */,
+				2B11002015C44C8600142119 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B11002115C44C8600142119 /* Build configuration list for PBXNativeTarget "PXJSONKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B11002215C44C8600142119 /* Debug */,
+				2B11002315C44C8600142119 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2B11000A15C44C8500142119 /* Project object */;
+}
