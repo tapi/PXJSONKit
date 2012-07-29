@@ -120,6 +120,10 @@ void PXComputeDelta(uint64_t start, uint64_t end, const char *methodName)
 	PX_PROFILE_START
 	
 #if PX_JSON_STRATEGY == PX_JSON_NATIVE
+	object = [NSJSONSerialization JSONObjectWithData:self
+											 options:NSJSONReadingAllowFragments
+											   error:error];
+
 #elif PX_JSON_STRATEGY == PX_JSON_JSONKIT
 #elif PX_JSON_STRATEGY == PX_JSON_SBJSON
 #endif
@@ -135,6 +139,9 @@ void PXComputeDelta(uint64_t start, uint64_t end, const char *methodName)
 	
 	PX_PROFILE_START
 #if PX_JSON_STRATEGY == PX_JSON_NATIVE
+	object = [NSJSONSerialization JSONObjectWithData:self
+											 options:NSJSONReadingAllowFragments | NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves
+											   error:error];
 #elif PX_JSON_STRATEGY == PX_JSON_JSONKIT
 #elif PX_JSON_STRATEGY == PX_JSON_SBJSON
 #endif
@@ -151,6 +158,11 @@ void PXComputeDelta(uint64_t start, uint64_t end, const char *methodName)
 	
 	PX_PROFILE_START
 #if PX_JSON_STRATEGY == PX_JSON_NATIVE
+	NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
+	object = [NSJSONSerialization JSONObjectWithData:data
+											 options:NSJSONReadingAllowFragments
+											   error:error];
+	
 #elif PX_JSON_STRATEGY == PX_JSON_JSONKIT
 #elif PX_JSON_STRATEGY == PX_JSON_SBJSON
 #endif
@@ -165,6 +177,10 @@ void PXComputeDelta(uint64_t start, uint64_t end, const char *methodName)
 	
 	PX_PROFILE_START
 #if PX_JSON_STRATEGY == PX_JSON_NATIVE
+	NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
+	object = [NSJSONSerialization JSONObjectWithData:data
+											 options:NSJSONReadingAllowFragments | NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves
+											   error:error];
 #elif PX_JSON_STRATEGY == PX_JSON_JSONKIT
 #elif PX_JSON_STRATEGY == PX_JSON_SBJSON
 #endif
