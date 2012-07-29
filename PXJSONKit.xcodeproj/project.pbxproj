@@ -122,9 +122,9 @@
 			children = (
 				2B11001B15C44C8600142119 /* PXJSONKit.h */,
 				2B11001D15C44C8600142119 /* PXJSONKit.m */,
+				2B1850AB15C5C6F700031EF7 /* README.md */,
 				2B11002415C44D8F00142119 /* Vendor */,
 				2B11001915C44C8600142119 /* Supporting Files */,
-				2B1850AB15C5C6F700031EF7 /* README.md */,
 			);
 			path = PXJSONKit;
 			sourceTree = "<group>";

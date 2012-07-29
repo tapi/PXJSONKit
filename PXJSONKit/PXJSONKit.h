@@ -5,7 +5,6 @@
 //  Created by Paddy O'Brien on 12-07-28.
 //  Copyright (c) 2012 500px. All rights reserved.
 //
-//  Used to evaluate various JSON Libraries. Th e need to define a common interface obviously leads to th loss of some features.
 
 #define PX_PROFILING		0
 
