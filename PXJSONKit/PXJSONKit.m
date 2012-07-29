@@ -129,6 +129,9 @@ void PXComputeDelta(uint64_t start, uint64_t end, const char *methodName)
 												error:error];
 
 #elif PX_JSON_STRATEGY == PX_JSON_SBJSON
+	SBJsonParser *parser = [[SBJsonParser alloc] init];
+	object = [parser objectWithData:self];
+	*error = parser.error;
 	
 #endif
 	
@@ -142,6 +145,7 @@ void PXComputeDelta(uint64_t start, uint64_t end, const char *methodName)
 	id object;
 	
 	PX_PROFILE_START
+	
 #if PX_JSON_STRATEGY == PX_JSON_NATIVE
 	object = [NSJSONSerialization JSONObjectWithData:self
 											 options:NSJSONReadingAllowFragments | NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves
@@ -151,7 +155,12 @@ void PXComputeDelta(uint64_t start, uint64_t end, const char *methodName)
 													   error:error];
 	
 #elif PX_JSON_STRATEGY == PX_JSON_SBJSON
+	SBJsonParser *parser = [[SBJsonParser alloc] init];
+	object = [[parser objectWithData:self] mutableCopy];
+	*error = parser.error;
+	
 #endif
+	
 	PX_PROFILE_END
 	
 	return object;
@@ -164,6 +173,7 @@ void PXComputeDelta(uint64_t start, uint64_t end, const char *methodName)
 	id object;
 	
 	PX_PROFILE_START
+	
 #if PX_JSON_STRATEGY == PX_JSON_NATIVE
 	NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
 	object = [NSJSONSerialization JSONObjectWithData:data
@@ -175,7 +185,11 @@ void PXComputeDelta(uint64_t start, uint64_t end, const char *methodName)
 												  error:error];
 	
 #elif PX_JSON_STRATEGY == PX_JSON_SBJSON
+	SBJsonParser *parser = [[SBJsonParser alloc] init];
+	object = [[parser objectWithString:self error:error];
+	
 #endif
+			  
 	PX_PROFILE_END
 	
 	return object;
@@ -186,6 +200,7 @@ void PXComputeDelta(uint64_t start, uint64_t end, const char *methodName)
 	id object;
 	
 	PX_PROFILE_START
+	
 #if PX_JSON_STRATEGY == PX_JSON_NATIVE
 	NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
 	object = [NSJSONSerialization JSONObjectWithData:data
@@ -197,7 +212,11 @@ void PXComputeDelta(uint64_t start, uint64_t end, const char *methodName)
 														 error:error];
 	
 #elif PX_JSON_STRATEGY == PX_JSON_SBJSON
+	SBJsonParser *parser = [[SBJsonParser alloc] init];
+	object = [[[parser objectWithString:self error:error] mutableCopy];
+			  
 #endif
+			  
 	PX_PROFILE_END
 	
 	return object;

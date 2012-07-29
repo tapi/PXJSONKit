@@ -10,7 +10,8 @@
 		2B11001715C44C8600142119 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B11001615C44C8500142119 /* Foundation.framework */; };
 		2B11001C15C44C8600142119 /* PXJSONKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2B11001B15C44C8600142119 /* PXJSONKit.h */; };
 		2B11001E15C44C8600142119 /* PXJSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B11001D15C44C8600142119 /* PXJSONKit.m */; };
-		2B11002A15C44E0500142119 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B11002815C44E0500142119 /* JSONKit.m */; };
+		2B11002A15C44E0500142119 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B11002815C44E0500142119 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2B1850C215C5D15C00031EF7 /* libsbjson-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B11003A15C44E5600142119 /* libsbjson-ios.a */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = BCC2627313920FC7003D9994;
 			remoteInfo = "sbjson-iosTests";
+		};
+		2B1850C015C5D14100031EF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2B11002B15C44E5500142119 /* SBJson.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCC2626813920FC7003D9994;
+			remoteInfo = "sbjson-ios";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -77,6 +85,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B11001715C44C8600142119 /* Foundation.framework in Frameworks */,
+				2B1850C215C5D15C00031EF7 /* libsbjson-ios.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +182,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				2B1850C115C5D14100031EF7 /* PBXTargetDependency */,
 			);
 			name = PXJSONKit;
 			productName = PXJSONKit;
@@ -254,6 +264,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2B1850C115C5D14100031EF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "sbjson-ios";
+			targetProxy = 2B1850C015C5D14100031EF7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		2B11001F15C44C8600142119 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -307,6 +325,7 @@
 				DSTROOT = /tmp/PXJSONKit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PXJSONKit/PXJSONKit-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$SRCROOT/**";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -319,6 +338,7 @@
 				DSTROOT = /tmp/PXJSONKit.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PXJSONKit/PXJSONKit-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$SRCROOT/**";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
