@@ -68,6 +68,7 @@
 		2B11002815C44E0500142119 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		2B11002915C44E0500142119 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		2B11002B15C44E5500142119 /* SBJson.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SBJson.xcodeproj; path = "json-framework/SBJson.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		2B1850AB15C5C6F700031EF7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +115,7 @@
 				2B11001D15C44C8600142119 /* PXJSONKit.m */,
 				2B11002415C44D8F00142119 /* Vendor */,
 				2B11001915C44C8600142119 /* Supporting Files */,
+				2B1850AB15C5C6F700031EF7 /* README.md */,
 			);
 			path = PXJSONKit;
 			sourceTree = "<group>";
