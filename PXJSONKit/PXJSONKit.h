@@ -13,17 +13,19 @@
 #define PX_JSON_JSONKIT		2
 #define PX_JSON_SBJSON		3
 
-#define PX_JSON_STRATEGY	PX_JSON_NATIVE
+#define PX_JSON_STRATEGY		PX_JSON_NATIVE
+#define PX_JSON_PRETTY_PRINT	NO
 
 
 #import <Foundation/Foundation.h>
 
+
 @interface NSArray (Serialization)
-- (NSData *)PX_dataWithJSONObject:(id)obj error:(NSError **)error;
+- (NSData *)PX_JSONDataError:(NSError **)error;
 @end
 
 @interface NSDictionary (Serialization)
-- (NSData *)PX_dataWithJSONObject:(id)obj error:(NSError **)error;
+- (NSData *)PX_JSONDataError:(NSError **)error;
 @end
 
 

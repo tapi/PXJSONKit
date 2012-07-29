@@ -30,8 +30,11 @@ void PXComputeDelta(uint64_t start, uint64_t end, const char *methodName)
     elapsedNano = elapsed * sTimebaseInfo.numer / sTimebaseInfo.denom;
 	
 #if PX_JSON_STRATEGY == PX_JSON_NATIVE
+	NSLog(@"INFO: Parsing took %llu ns using NSJSONSerialization", elapsedNano);
 #elif PX_JSON_STRATEGY == PX_JSON_JSONKIT
+	NSLog(@"INFO: Parsing took %llu ns using JSONKit", elapsedNano);
 #elif PX_JSON_STRATEGY == PX_JSON_SBJSON
+	NSLog(@"INFO: Parsing took %llu ns using SBJSON", elapsedNano);
 #endif
 }
 
@@ -49,15 +52,27 @@ void PXComputeDelta(uint64_t start, uint64_t end, const char *methodName)
 
 
 @implementation NSArray (Serialization)
-- (NSData *)PX_dataWithJSONObject:(id)obj error:(NSError **)error
+- (NSData *)PX_JSONDataError:(NSError **)error
 {
 	NSData *JSONData;
 	
 	PX_PROFILE_START
 	
 #if PX_JSON_STRATEGY == PX_JSON_NATIVE
+	JSONData = [NSJSONSerialization dataWithJSONObject:self
+											   options:(PX_JSON_PRETTY_PRINT) ? NSJSONWritingPrettyPrinted : 0
+												 error:error];
+	
 #elif PX_JSON_STRATEGY == PX_JSON_JSONKIT
+	JSONData = [self JSONDataWithOptions:(PX_JSON_PRETTY_PRINT) ? JKSerializeOptionPretty : JKSerializeOptionNone
+								   error:error];
+	
 #elif PX_JSON_STRATEGY == PX_JSON_SBJSON
+	SBJsonWriter *writer = [[SBJSONWritter alloc] init];
+	writer.humanReadable = (PX_JSON_PRETTY_PRINT) ? YES : NO;
+	JSONData = [writer dataWithObject:self];
+	*error = writer.error;
+	
 #endif
 	
 	PX_PROFILE_END
@@ -67,15 +82,27 @@ void PXComputeDelta(uint64_t start, uint64_t end, const char *methodName)
 @end
 
 @implementation NSDictionary (Serialization)
-- (NSData *)PX_dataWithJSONObject:(id)obj error:(NSError **)error
+- (NSData *)PX_JSONDataError:(NSError **)error
 {
 	NSData *JSONData;
 	
 	PX_PROFILE_START
 	
 #if PX_JSON_STRATEGY == PX_JSON_NATIVE
+	JSONData = [NSJSONSerialization dataWithJSONObject:self
+											   options:(PX_JSON_PRETTY_PRINT) ? NSJSONWritingPrettyPrinted : 0
+												 error:error];
+
 #elif PX_JSON_STRATEGY == PX_JSON_JSONKIT
+	JSONData = [self JSONDataWithOptions:(PX_JSON_PRETTY_PRINT) ? JKSerializeOptionPretty : JKSerializeOptionNone
+								   error:error];
+	
 #elif PX_JSON_STRATEGY == PX_JSON_SBJSON
+	SBJsonWriter *writer = [[SBJSONWritter alloc] init];
+	writer.humanReadable = (PX_JSON_PRETTY_PRINT) ? YES : NO;
+	JSONData = [writer dataWithObject:self];
+	*error = writer.error;
+
 #endif
 	
 	PX_PROFILE_END
@@ -88,6 +115,8 @@ void PXComputeDelta(uint64_t start, uint64_t end, const char *methodName)
 @implementation NSData (Deserialization)
 - (id)PX_objectWithJSONDataError:(NSError **)error
 {
+	id object;
+	
 	PX_PROFILE_START
 	
 #if PX_JSON_STRATEGY == PX_JSON_NATIVE
@@ -96,37 +125,51 @@ void PXComputeDelta(uint64_t start, uint64_t end, const char *methodName)
 #endif
 	
 	PX_PROFILE_END
+	
+	return object;
 }
 
 - (id)PX_mutablObjectWithJSONDataError:(NSError **)error
 {
+	id object;
+	
 	PX_PROFILE_START
 #if PX_JSON_STRATEGY == PX_JSON_NATIVE
 #elif PX_JSON_STRATEGY == PX_JSON_JSONKIT
 #elif PX_JSON_STRATEGY == PX_JSON_SBJSON
 #endif
 	PX_PROFILE_END
+	
+	return object;
 }
 @end
 
 @implementation NSString (Deserialization)
 - (id)PX_objectWithJSONStringError:(NSError **)error
 {
+	id object;
+	
 	PX_PROFILE_START
 #if PX_JSON_STRATEGY == PX_JSON_NATIVE
 #elif PX_JSON_STRATEGY == PX_JSON_JSONKIT
 #elif PX_JSON_STRATEGY == PX_JSON_SBJSON
 #endif
 	PX_PROFILE_END
+	
+	return object;
 }
 
 - (id)PX_mutablObjectWithJSONStringError:(NSError **)error
 {
+	id object;
+	
 	PX_PROFILE_START
 #if PX_JSON_STRATEGY == PX_JSON_NATIVE
 #elif PX_JSON_STRATEGY == PX_JSON_JSONKIT
 #elif PX_JSON_STRATEGY == PX_JSON_SBJSON
 #endif
 	PX_PROFILE_END
+	
+	return object;
 }
 @end
